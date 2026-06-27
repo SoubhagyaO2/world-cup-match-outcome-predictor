@@ -1,0 +1,144 @@
+{
+  "best_model_name": "Gradient Boosting",
+  "feature_columns": [
+    "home_elo",
+    "away_elo",
+    "elo_diff",
+    "home_win_rate",
+    "home_draw_rate",
+    "home_loss_rate",
+    "home_avg_goals_scored",
+    "home_avg_goals_conceded",
+    "home_goal_diff",
+    "away_win_rate",
+    "away_draw_rate",
+    "away_loss_rate",
+    "away_avg_goals_scored",
+    "away_avg_goals_conceded",
+    "away_goal_diff",
+    "home_form_win_rate",
+    "home_form_goals_scored",
+    "home_form_goals_conceded",
+    "home_form_score",
+    "away_form_win_rate",
+    "away_form_goals_scored",
+    "away_form_goals_conceded",
+    "away_form_score",
+    "h2h_matches",
+    "h2h_home_win_pct",
+    "h2h_draw_pct",
+    "is_neutral",
+    "is_world_cup",
+    "is_friendly",
+    "is_wc_qual"
+  ],
+  "feature_importance": {
+    "home_elo": 0.025209151731369134,
+    "away_elo": 0.032982210733042326,
+    "elo_diff": 0.48335394454784564,
+    "home_win_rate": 0.018315750289191385,
+    "home_draw_rate": 0.02789051283568368,
+    "home_loss_rate": 0.019923406050413536,
+    "home_avg_goals_scored": 0.022015261758893737,
+    "home_avg_goals_conceded": 0.0321897952245601,
+    "home_goal_diff": 0.019390329695299274,
+    "away_win_rate": 0.020400051806599914,
+    "away_draw_rate": 0.031667308669369135,
+    "away_loss_rate": 0.019244420798152806,
+    "away_avg_goals_scored": 0.02518160447633052,
+    "away_avg_goals_conceded": 0.03268988304827085,
+    "away_goal_diff": 0.02100788368280737,
+    "home_form_win_rate": 0.001645377213731166,
+    "home_form_goals_scored": 0.011344843681208016,
+    "home_form_goals_conceded": 0.019971767708095094,
+    "home_form_score": 0.00791344943570962,
+    "away_form_win_rate": 0.001926202304084697,
+    "away_form_goals_scored": 0.009381179931630276,
+    "away_form_goals_conceded": 0.016672265159374408,
+    "away_form_score": 0.006449486850963444,
+    "h2h_matches": 0.021448071300881076,
+    "h2h_home_win_pct": 0.01979606540878597,
+    "h2h_draw_pct": 0.015413219576028672,
+    "is_neutral": 0.024105032673083424,
+    "is_world_cup": 0.0006787956909075183,
+    "is_friendly": 0.00741329490887379,
+    "is_wc_qual": 0.00437943280881351
+  },
+  "classes": [
+    "Away Win",
+    "Draw",
+    "Home Win"
+  ],
+  "all_model_metrics": {
+    "Logistic Regression": {
+      "accuracy": 0.5985666805151642,
+      "precision": 0.5115830585666128,
+      "recall": 0.5003333458146709,
+      "f1_score": 0.45005543605604975,
+      "confusion_matrix": [
+        [
+          1666,
+          49,
+          1075
+        ],
+        [
+          673,
+          44,
+          1538
+        ],
+        [
+          493,
+          37,
+          4053
+        ]
+      ]
+    },
+    "Random Forest": {
+      "accuracy": 0.5938928126298296,
+      "precision": 0.5146156484258394,
+      "recall": 0.49649009199456723,
+      "f1_score": 0.45294492891372345,
+      "confusion_matrix": [
+        [
+          1604,
+          77,
+          1109
+        ],
+        [
+          643,
+          75,
+          1537
+        ],
+        [
+          483,
+          61,
+          4039
+        ]
+      ]
+    },
+    "Gradient Boosting": {
+      "accuracy": 0.5855837141670128,
+      "precision": 0.4968956598231778,
+      "recall": 0.49774112461022124,
+      "f1_score": 0.47027581310976324,
+      "confusion_matrix": [
+        [
+          1593,
+          211,
+          986
+        ],
+        [
+          650,
+          176,
+          1429
+        ],
+        [
+          505,
+          209,
+          3869
+        ]
+      ]
+    }
+  },
+  "training_date": "2026-06-27T13:45:22.109168"
+}
