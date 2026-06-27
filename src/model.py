@@ -192,15 +192,29 @@ def save_model(train_results: dict, verbose: bool = True):
 
 
 def load_model() -> tuple:
-    """Load the saved model, label encoder, and metadata."""
+    """Load the saved model, label encoder, and metadata. Retrains if incompatible."""
     model_path = os.path.join(MODELS_DIR, "best_model.joblib")
     encoder_path = os.path.join(MODELS_DIR, "label_encoder.joblib")
     metadata_path = os.path.join(MODELS_DIR, "model_metadata.json")
 
-    model = joblib.load(model_path)
-    le = joblib.load(encoder_path)
-
-    with open(metadata_path, "r") as f:
-        metadata = json.load(f)
+    try:
+        model = joblib.load(model_path)
+        le = joblib.load(encoder_path)
+        with open(metadata_path, "r") as f:
+            metadata = json.load(f)
+    except Exception as e:
+        print(f"Error loading model: {e}. Retraining on the fly for system compatibility...")
+        import sys
+        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        if project_root not in sys.path:
+            sys.path.insert(0, project_root)
+        from train_model import main as train_main
+        train_main()
+        
+        # Retry loading
+        model = joblib.load(model_path)
+        le = joblib.load(encoder_path)
+        with open(metadata_path, "r") as f:
+            metadata = json.load(f)
 
     return model, le, metadata
